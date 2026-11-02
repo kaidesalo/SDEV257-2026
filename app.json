@@ -1,22 +1,7 @@
 {
   "expo": {
-    "name": "MyNewProject",
-    "slug": "MyNewProject",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "scheme": "mynewproject",
-    "userInterfaceStyle": "automatic",
-    "android": {
-      "predictiveBackGestureEnabled": false
-    },
-    "web": {
-      "output": "server"
-    },
-    "plugins": [
-    ],
-    "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
-    }
+    "name": "SDEV257-2026",
+    "slug": "sdev257-2026",
+    "sdkVersion": "54.0.0"
   }
 }
