@@ -1,0 +1,28 @@
+import { StatusBar } from 'expo-status-bar'
+import { Text, View, StyleSheet } from "react-native";
+
+export default function Index() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Hi, my name is Kaide, and I am a mobile developer.</Text>
+      <Text>~~~</Text>
+      <Text>This assignment has outdated</Text>
+      <Text>instructions on downloading expo which cases</Text>
+      <Text>delays on submitting the assignment.</Text>
+
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#DDE4D0",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontWeight: "bold",
+  },
+});
