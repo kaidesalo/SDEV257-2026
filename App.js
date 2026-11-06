@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StatusBar } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { View} from 'react-native';
 import styles from "./styles";
 import Row from "./Row";
 import Column from "./Column";
