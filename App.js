@@ -1,32 +1,42 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Platform } from "react-native";
-import Planets from "./Planets";
-import Spaceships from "./Spaceships";
-import Films from "./Films";
-
-const Tab = createBottomTabNavigator();
-const Drawer = createDrawerNavigator();
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import Task from "./components/Task";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      {Platform.OS === "ios" && (
-        <Tab.Navigator>
-          <Tab.Screen name="Planets" component={Planets} />
-          <Tab.Screen name="Spaceships" component={Spaceships} />
-          <Tab.Screen name="Films" component={Films} />
-        </Tab.Navigator>
-      )}
+    <View style={styles.container}>
 
-      {Platform.OS === "android" && (
-        <Drawer.Navigator>
-          <Drawer.Screen name="Planets" component={Planets} />
-          <Drawer.Screen name="Spaceships" component={Spaceships} />
-          <Drawer.Screen name="Films" component={Films} />
-        </Drawer.Navigator>
-      )}
-    </NavigationContainer>
+      {/* Today's Tasks */}
+      <View style={styles.tasksWrapper}>
+        <Text style={styles.sectionTitle}>Today's Tasks</Text>
+
+        <View style={styles.items}>
+          {/* This is where the tasks will go */}
+          <Task text={'task 1'} />
+          <Task text={'task 2'} />
+          <Task text={'task 3'} />
+        </View>
+      </View>
+
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#77ca9e",
+  },
+  tasksWrapper: {
+    paddingTop: 80,
+    paddingHorizontal: 20,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  items: {
+    marginTop: 30,
+  },
+})
