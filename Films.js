@@ -9,14 +9,14 @@ export default function Films() {
   useEffect(() => {
     async function loadFilms() {
       try {
-        const response = await fetch("https://www.swapi.tech/api/films");
+        const response = await fetch("https://www.swapi.tech/api/films/");
 
         if (!response.ok) {
           throw new Error(`SWAPI returned status ${response.status}`);
         }
 
         const data = await response.json();
-        setFilms(data.results);
+        setFilms(data.result);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -33,8 +33,8 @@ export default function Films() {
   return (
     <FlatList
       data={films}
-      keyExtractor={(item) => item.url}
-      renderItem={({ item }) => <Text>{item.name}</Text>}
+      keyExtractor={(item) => item.uid}
+      renderItem={({ item }) => <Text>{item.properties.title}</Text>}
     />
   );
 }
